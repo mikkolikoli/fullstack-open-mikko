@@ -1,17 +1,6 @@
 import React, { useState } from 'react'
 
 
-const Anecdote = ({ anecdote, votes }) => {
-  return (
-    <div>
-      <p>
-        {anecdote} <br />
-        has {votes} votes
-      </p>
-    </div>
-  )
-}
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -41,10 +30,22 @@ const App = () => {
 
   return (
     <div>
-      <h1>Anecdote of the day</h1>
-      <Anecdote  anecdote={anecdotes[selected]} />
-      <button onClick={handleVote}>vote</button>
-      <button onClick={handleNextAnecdote}>next anecdote</button>
+      <div>
+        <h1>Anecdote of the day</h1>
+        <p>
+          {anecdotes[selected]} <br />
+          has {votes[selected]} votes
+        </p>
+        <button onClick={handleVote}>vote</button>
+        <button onClick={handleNextAnecdote}>next anecdote</button>
+      </div>
+      <div>
+        <h1>Anecdote with the most votes</h1>
+        <p>
+          {anecdotes[best]} <br />
+          has {votes[best]} votes
+        </p>
+      </div>
     </div>
   )
 }
