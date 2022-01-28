@@ -26,12 +26,14 @@ const Part = ({ part }) => {
 }
 
 const TotalExcercises = ({ parts }) => {
-    console.log(parts)
-    const excercises = parts.map(part => part.excercises)
-    console.log(excercises)
+    const excercises = parts.map(part => part.exercises)
+    const total = excercises.reduce((previousValue, currentValue) => previousValue + currentValue)
+
     return (
         <div>
-
+            <p>
+                <b>total of {total} exercises</b>
+            </p>
         </div>
     )
 }
